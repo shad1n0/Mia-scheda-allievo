@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Scheda Allievo · M.I.A. Padel Academy</title>
+<style>
+:root{--navy:#08275c;--orange:#ff6a00;--bg:#f5f7fb;--card:#fff;--text:#1e2b42;--muted:#6f7889;--line:#d7dde8;--ok:#198754;--danger:#c0392b}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--text)}
+.page{max-width:760px;margin:auto;padding:18px 14px 50px}
+.hero,.card{background:var(--card);border-radius:28px;box-shadow:0 8px 28px rgba(13,39,78,.08);border:1px solid #edf0f5}
+.hero{position:relative;overflow:hidden;text-align:center;padding:28px 24px 30px;margin-bottom:18px}
+.hero:before{content:"";position:absolute;top:0;left:0;right:0;height:8px;background:var(--orange)}
+.logo{display:block;width:min(390px,82%);height:auto;margin:10px auto 20px}
+.hero h1{margin:8px 0;font-size:34px;line-height:1.05;color:var(--navy);font-weight:900}
+.hero p{margin:0 auto;max-width:560px;color:var(--muted);font-size:17px;line-height:1.5}
+.card{padding:22px;margin:16px 0}
+.section-title{display:flex;align-items:center;gap:10px;color:var(--navy);font-weight:900;font-size:21px;padding-bottom:13px;border-bottom:2px solid #eef1f5;margin-bottom:18px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}.full{grid-column:1/-1}
+label{display:block;font-size:14px;font-weight:800;color:#31405a;margin:0 0 7px}.req{color:var(--orange)}
+input,select,textarea{width:100%;border:1px solid var(--line);border-radius:16px;background:#fff;padding:13px 14px;font:inherit;color:var(--text);outline:none;transition:.15s}
+input:focus,select:focus,textarea:focus{border-color:#7798c9;box-shadow:0 0 0 3px rgba(27,81,153,.08)}
+textarea{min-height:105px;resize:vertical}
+.chips{display:flex;flex-wrap:wrap;gap:9px}.chip{position:relative}.chip input{position:absolute;opacity:0}.chip span{display:inline-flex;padding:10px 13px;border:1px solid var(--line);border-radius:999px;font-weight:800;font-size:13px;cursor:pointer}.chip input:checked+span{background:#edf4ff;border-color:#94b6e8;color:var(--navy)}
+.guardian{display:none}.submit-wrap{text-align:center;margin-top:22px}
+button{border:0;border-radius:14px;background:linear-gradient(135deg,var(--navy),#154c9c);color:#fff;font-size:16px;font-weight:900;padding:14px 28px;box-shadow:0 8px 18px rgba(8,39,92,.18)}
+button:disabled{opacity:.6}
+.status{min-height:26px;text-align:center;font-weight:900;margin-top:13px}.status.ok{color:var(--ok)}.status.err{color:var(--danger)}
+.privacy{font-size:12px;color:var(--muted);text-align:center;line-height:1.45;margin-top:14px}
+.thanks{display:none;min-height:82vh;align-items:center;justify-content:center}.thanks-card{background:#fff;border-radius:30px;box-shadow:0 10px 32px rgba(13,39,78,.10);border:1px solid #edf0f5;overflow:hidden;text-align:center;padding:34px 24px 38px;position:relative}.thanks-card:before{content:"";position:absolute;top:0;left:0;right:0;height:8px;background:var(--orange)}.thanks-logo{display:block;width:min(360px,82%);height:auto;margin:8px auto 26px}.thanks-check{width:72px;height:72px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;background:#eef8f2;color:var(--ok);font-size:38px;font-weight:900}.thanks-card h1{margin:0 0 14px;color:var(--navy);font-size:34px;line-height:1.1}.thanks-card p{margin:0 auto;color:var(--muted);font-size:18px;line-height:1.55;max-width:520px}.thanks-card .soon{margin-top:18px;color:var(--navy);font-weight:900;font-size:20px}
+@media(max-width:620px){.page{padding:10px 10px 38px}.hero{padding:24px 18px 26px;border-radius:24px}.logo{width:84%;margin-bottom:16px}.hero h1{font-size:29px}.hero p{font-size:15px}.card{padding:18px;border-radius:23px}.grid{grid-template-columns:1fr}.full{grid-column:auto}.section-title{font-size:20px}.thanks-card{border-radius:24px;padding:28px 18px 32px}.thanks-card h1{font-size:29px}.thanks-card p{font-size:16px}.thanks-card .soon{font-size:18px}}
+</style>
+</head>
+<body>
+<div class="page">
+<div id="formView">
+<header class="hero">
+<img class="logo" alt="M.I.A. Padel Academy" src="https://raw.githubusercontent.com/shad1n0/Mia-Academy-/main/assets/file_000000002fa88210b507535453572dd7%20(2).png">
+<h1>Scheda Allievo</h1>
+<p>Compila i dati per permettermi di organizzare al meglio il tuo percorso di allenamento.</p>
+</header>
+<form id="studentForm">
+<section class="card"><div class="section-title">👤 Dati personali</div><div class="grid">
+<div><label for="nome">Nome <span class="req">*</span></label><input id="nome" name="nome" required autocomplete="given-name"></div>
+<div><label for="cognome">Cognome <span class="req">*</span></label><input id="cognome" name="cognome" required autocomplete="family-name"></div>
+<div><label for="telefono">Telefono <span class="req">*</span></label><input id="telefono" name="telefono" type="tel" required autocomplete="tel"></div>
+<div><label for="email">Email <span class="req">*</span></label><input id="email" name="email" type="email" required autocomplete="email"></div>
+<div><label for="data_nascita">Data di nascita</label><input id="data_nascita" name="data_nascita" type="date"></div>
+<div><label for="fascia_eta">Fascia età</label><select id="fascia_eta" name="fascia_eta"><option>4-5 anni</option><option>6-9 anni</option><option>10-13 anni</option><option>14-17 anni</option><option selected>18-25 anni</option><option>26-40 anni</option><option>41-50 anni</option><option>51-60 anni</option><option>60+ anni</option></select></div>
+<div><label for="occupazione_tipo">Lavoro o studio</label><select id="occupazione_tipo" name="occupazione_tipo"><option value="">Non indicato</option><option>Lavoro</option><option>Studio</option><option>Altro</option></select></div>
+<div id="occupazioneDettaglioBox" style="display:none"><label id="occupazioneDettaglioLabel" for="occupazione_dettaglio">Dettaglio</label><input id="occupazione_dettaglio" name="occupazione_dettaglio" placeholder="Scrivi qui"></div>
+</div></section>
+<section id="guardianCard" class="card guardian"><div class="section-title">👨‍👩‍👧 Tutore</div><div class="grid">
+<div><label for="tutore_nome">Nome e cognome tutore</label><input id="tutore_nome" name="tutore_nome"></div>
+<div><label for="tutore_telefono">Telefono tutore</label><input id="tutore_telefono" name="tutore_telefono" type="tel"></div>
+<div class="full"><label for="tutore_email">Email tutore</label><input id="tutore_email" name="tutore_email" type="email"></div>
+</div></section>
+<section class="card"><div class="section-title">🎾 Profilo sportivo</div><div class="grid">
+<div><label for="livello">Livello</label><select id="livello" name="livello"><option>Principiante</option><option>Base</option><option selected>Intermedio</option><option>Avanzato</option><option>Agonista</option></select></div>
+<div><label for="mano_dominante">Mano dominante</label><select id="mano_dominante" name="mano_dominante"><option selected>Destra</option><option>Sinistra</option></select></div>
+<div class="full"><label for="esperienza_padel">Esperienza nel padel</label><input id="esperienza_padel" name="esperienza_padel" placeholder="Es. gioco da 3 anni, 2 volte a settimana"></div>
+</div></section>
+<section class="card"><div class="section-title">🏅 FITP</div><div class="grid">
+<div><label for="fascia_fitp">Fascia FITP</label><select id="fascia_fitp" name="fascia_fitp"><option selected>Non classificato (NC)</option><option>Quarta</option><option>Terza</option><option>Seconda</option><option>Prima</option></select></div>
+<div id="classificaBox"><label for="classifica_fitp">Numero classifica FITP</label><input id="classifica_fitp" name="classifica_fitp"></div>
+<div><label for="tipo_tessera">Tipo tessera FITP</label><select id="tipo_tessera" name="tipo_tessera"><option selected>Non selezionata</option><option>Non agonistica</option><option>Agonistica</option></select></div>
+<div id="tesseraBox"><label for="numero_tessera">Numero tessera FITP</label><input id="numero_tessera" name="numero_tessera"></div>
+</div></section>
+<section class="card"><div class="section-title">🩺 Visita medica</div><div class="grid">
+<div><label for="scadenza_visita">Scadenza visita medica</label><input id="scadenza_visita" name="scadenza_visita" type="date"></div>
+<div><label for="certificato">Certificato</label><select id="certificato" name="certificato"><option value="">Non indicato</option><option>Non agonistico</option><option>Agonistico</option><option>Nessuno</option></select></div>
+</div></section>
+<section class="card"><div class="section-title">🎯 Obiettivi</div><div class="grid">
+<div class="full"><label for="obiettivi">Obiettivi personali</label><textarea id="obiettivi" name="obiettivi" placeholder="Cosa vuoi migliorare o raggiungere nel padel?"></textarea></div>
+<div class="full"><label for="note">Note</label><textarea id="note" name="note" placeholder="Informazioni utili che vuoi comunicare al maestro"></textarea></div>
+</div></section>
+<section class="card"><div class="section-title">📅 Preferenze e disponibilità</div>
+<label>Preferenze lezioni</label><div class="chips" style="margin-bottom:15px">
+<label class="chip"><input type="checkbox" value="Lezioni individuali"><span>Individuali</span></label>
+<label class="chip"><input type="checkbox" value="Lezioni di gruppo"><span>Di gruppo</span></label>
+<label class="chip"><input type="checkbox" value="Clinic"><span>Clinic</span></label>
+<label class="chip"><input type="checkbox" value="Allenamento agonistico"><span>Agonistico</span></label>
+</div><input type="hidden" id="preferenze" name="preferenze">
+<label for="disponibilita">Disponibilità</label><textarea id="disponibilita" name="disponibilita" placeholder="Es. lunedì e mercoledì dopo le 18:00"></textarea>
+</section>
+<div class="submit-wrap"><button id="submitBtn" type="submit">Invia scheda</button></div><div id="status" class="status"></div>
+<div class="privacy">I dati inseriti vengono utilizzati esclusivamente per la gestione della scheda allievo M.I.A. Padel Academy.</div>
+</form>
+</div>
+<section id="thanksView" class="thanks">
+<div class="thanks-card">
+<img class="thanks-logo" alt="M.I.A. Padel Academy" src="https://raw.githubusercontent.com/shad1n0/Mia-Academy-/main/assets/file_000000002fa88210b507535453572dd7%20(2).png">
+<div class="thanks-check">✓</div>
+<h1>Grazie, <span id="thanksName"></span>!</h1>
+<p>La tua scheda è stata inviata correttamente.<br>Grazie per aver dedicato qualche minuto alla compilazione.</p>
+<div class="soon">Ci vediamo presto in campo! 🎾</div>
+</div>
+</section>
+</div>
+<script>
+const ENDPOINT='https://script.google.com/macros/s/AKfycbzZKIUP3WBfyFLQnkA-t4ydBFnQpE_-UZLqHYu2shtqKihTvy6Le_oC0kh6iCQ6X9OEkw/exec';
+const age=document.getElementById('fascia_eta'),guardian=document.getElementById('guardianCard'),fitp=document.getElementById('fascia_fitp'),classificaBox=document.getElementById('classificaBox'),cardType=document.getElementById('tipo_tessera'),tesseraBox=document.getElementById('tesseraBox'),occupation=document.getElementById('occupazione_tipo'),occupationBox=document.getElementById('occupazioneDettaglioBox'),occupationLabel=document.getElementById('occupazioneDettaglioLabel');
+function syncGuardian(){guardian.style.display=['4-5 anni','6-9 anni','10-13 anni','14-17 anni'].includes(age.value)?'block':'none'}function syncFitp(){classificaBox.style.display=/non classific/i.test(fitp.value)?'none':'block'}function syncCard(){tesseraBox.style.display=cardType.value==='Non selezionata'?'none':'block'}function syncOccupation(){const v=occupation.value;occupationBox.style.display=v?'block':'none';occupationLabel.textContent=v==='Lavoro'?'Che lavoro fai?':v==='Studio'?'Cosa studi?':v==='Altro'?'Descrivi':'Dettaglio'}
+age.addEventListener('change',syncGuardian);fitp.addEventListener('change',syncFitp);cardType.addEventListener('change',syncCard);occupation.addEventListener('change',syncOccupation);syncGuardian();syncFitp();syncCard();syncOccupation();
+document.getElementById('data_nascita').addEventListener('change',e=>{if(!e.target.value)return;const b=new Date(e.target.value+'T12:00:00'),now=new Date();let y=now.getFullYear()-b.getFullYear();const m=now.getMonth()-b.getMonth();if(m<0||(m===0&&now.getDate()<b.getDate()))y--;age.value=y<=5?'4-5 anni':y<=9?'6-9 anni':y<=13?'10-13 anni':y<=17?'14-17 anni':y<=25?'18-25 anni':y<=40?'26-40 anni':y<=50?'41-50 anni':y<=60?'51-60 anni':'60+ anni';syncGuardian()});
+document.getElementById('studentForm').addEventListener('submit',async e=>{e.preventDefault();const btn=document.getElementById('submitBtn'),status=document.getElementById('status');document.getElementById('preferenze').value=[...document.querySelectorAll('.chip input:checked')].map(x=>x.value).join(', ');const form=e.currentTarget;if(!form.reportValidity())return;const data=new FormData(form);const studentName=String(data.get('nome')||'').trim();const occType=String(data.get('occupazione_tipo')||'').trim(),occDetail=String(data.get('occupazione_dettaglio')||'').trim(),note=String(data.get('note')||'').trim();if(occType)data.set('note',(`[MIA_OCCUPAZIONE] ${occType}: ${occDetail}\n${note}`).trim());const body=new URLSearchParams(data);btn.disabled=true;btn.textContent='Invio in corso…';status.className='status';status.textContent='';try{await fetch(ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/x-www-form-urlencoded;charset=UTF-8'},body:body.toString()});document.getElementById('thanksName').textContent=studentName||'!';document.getElementById('formView').style.display='none';document.getElementById('thanksView').style.display='flex';window.scrollTo({top:0,behavior:'smooth'})}catch(err){status.className='status err';status.textContent='⚠️ Invio non riuscito. Riprova tra poco.'}finally{btn.disabled=false;btn.textContent='Invia scheda'}});
+</script>
+</body>
+</html>
