@@ -12,7 +12,11 @@ body{margin:0;background:var(--bg);font-family:Inter,system-ui,-apple-system,Bli
 .hero,.card{background:var(--card);border-radius:28px;box-shadow:0 8px 28px rgba(13,39,78,.08);border:1px solid #edf0f5}
 .hero{position:relative;overflow:hidden;text-align:center;padding:28px 24px 30px;margin-bottom:18px}
 .hero:before{content:"";position:absolute;top:0;left:0;right:0;height:8px;background:var(--orange)}
-.logo{display:block;width:min(390px,82%);height:auto;margin:10px auto 20px}
+.logo{display:block;width:min(390px,82%);height:auto;margin:10px auto 14px}
+.club-brand{display:flex;flex-direction:column;align-items:center;gap:8px;margin:0 auto 18px;padding-top:14px;border-top:1px solid #edf0f5;max-width:430px}
+.club-logo{display:block;width:min(170px,42%);height:auto;border-radius:14px}
+.club-name{font-size:14px;font-weight:900;color:var(--navy)}
+.club-address{font-size:13px;color:var(--muted);line-height:1.4}
 .hero h1{margin:8px 0;font-size:34px;line-height:1.05;color:var(--navy);font-weight:900}
 .hero p{margin:0 auto;max-width:560px;color:var(--muted);font-size:17px;line-height:1.5}
 .card{padding:22px;margin:16px 0}
@@ -29,7 +33,7 @@ button:disabled{opacity:.6}
 .status{min-height:26px;text-align:center;font-weight:900;margin-top:13px}.status.ok{color:var(--ok)}.status.err{color:var(--danger)}
 .privacy{font-size:12px;color:var(--muted);text-align:center;line-height:1.45;margin-top:14px}
 .thanks{display:none;min-height:82vh;align-items:center;justify-content:center}.thanks-card{background:#fff;border-radius:30px;box-shadow:0 10px 32px rgba(13,39,78,.10);border:1px solid #edf0f5;overflow:hidden;text-align:center;padding:34px 24px 38px;position:relative}.thanks-card:before{content:"";position:absolute;top:0;left:0;right:0;height:8px;background:var(--orange)}.thanks-logo{display:block;width:min(360px,82%);height:auto;margin:8px auto 26px}.thanks-check{width:72px;height:72px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;background:#eef8f2;color:var(--ok);font-size:38px;font-weight:900}.thanks-card h1{margin:0 0 14px;color:var(--navy);font-size:34px;line-height:1.1}.thanks-card p{margin:0 auto;color:var(--muted);font-size:18px;line-height:1.55;max-width:520px}.thanks-card .soon{margin-top:18px;color:var(--navy);font-weight:900;font-size:20px}
-@media(max-width:620px){.page{padding:10px 10px 38px}.hero{padding:24px 18px 26px;border-radius:24px}.logo{width:84%;margin-bottom:16px}.hero h1{font-size:29px}.hero p{font-size:15px}.card{padding:18px;border-radius:23px}.grid{grid-template-columns:1fr}.full{grid-column:auto}.section-title{font-size:20px}.thanks-card{border-radius:24px;padding:28px 18px 32px}.thanks-card h1{font-size:29px}.thanks-card p{font-size:16px}.thanks-card .soon{font-size:18px}}
+@media(max-width:620px){.page{padding:10px 10px 38px}.hero{padding:24px 18px 26px;border-radius:24px}.logo{width:84%;margin-bottom:12px}.club-logo{width:min(145px,44%)}.club-name{font-size:13px}.club-address{font-size:12px}.hero h1{font-size:29px}.hero p{font-size:15px}.card{padding:18px;border-radius:23px}.grid{grid-template-columns:1fr}.full{grid-column:auto}.section-title{font-size:20px}.thanks-card{border-radius:24px;padding:28px 18px 32px}.thanks-card h1{font-size:29px}.thanks-card p{font-size:16px}.thanks-card .soon{font-size:18px}}
 </style>
 </head>
 <body>
@@ -37,6 +41,11 @@ button:disabled{opacity:.6}
 <div id="formView">
 <header class="hero">
 <img class="logo" alt="M.I.A. Padel Academy" src="https://mia-academy.shad1n075.workers.dev/assets/file_000000002fa88210b507535453572dd7%20(2).png?v=7">
+<div class="club-brand">
+<img class="club-logo" alt="Paradise Padel Torino" src="https://res.cloudinary.com/playtomic/image/upload/v1753967568/pro/tenants/dc814a5e-b141-4501-bea4-24ce185f3aea/1753967568313.jpg">
+<div class="club-name">M.I.A. Padel Academy presso Paradise Padel</div>
+<div class="club-address">Via Gioacchino Quarello 43, 10135 Torino</div>
+</div>
 <h1>Scheda Allievo</h1>
 <p>Compila i dati per permettermi di organizzare al meglio il tuo percorso di allenamento.</p>
 </header>
